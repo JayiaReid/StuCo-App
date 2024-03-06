@@ -1,0 +1,164 @@
+.container{
+    width: 75px;
+    height: 275px;
+    transform-origin: top center;
+    position: absolute;
+    top: 0;
+    left: calc(50% - (75px/2));
+    
+}
+
+.container.moveswing{
+    animation: bulb-swing 3s infinite ease-in-out;
+}
+.container.stopswing{
+    animation: bulb-swing 0s infinite ease-in-out;
+}
+
+.bulb{
+    z-index: 10;
+    display: block;
+    width: 75px;
+    height:75px;
+    border-radius: 50%;
+    position: absolute;
+    top: 200px;
+    left: calc(50% - (75px/2));
+    border: 1px solid black;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.bulb::before{
+    content: "";
+    position: absolute;
+    width: 35px;
+    height: 50px;
+    background: black;
+    bottom: 100%;
+    left: calc(50% - (35px/2));
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    z-index: -1;
+}
+
+.bulb::after{
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 250px;
+    background: black;
+    bottom: 100%;
+    left: calc(50% - 5px);
+    z-index: -1;
+}
+
+.filaments{
+    display: block;
+    position: absolute;
+    width: 2px;
+    height: 30px;
+    background: black;
+    top: 2px;
+    left: 28px;
+    box-shadow: 17px 0 black;
+}
+
+.filaments::after{
+    display: block;
+    width: 2px;
+    height: 12px;
+    background: black;
+    box-shadow: 4.5px 0 black, 9px 0 black;
+    position: absolute;
+    bottom: -2px;
+    left: 4px;
+}
+
+.bulb{
+    background-color: #FFD700;
+    /* box-shadow: 
+        5px 5px 80px gold, 
+        5px -5px 80px gold,
+        -5px 5px 80px gold,
+        -5px -5px 80px gold;
+    border: none; */
+}
+.bulb.on{
+    box-shadow: 
+        5px 5px 80px gold, 
+        5px -5px 80px gold,
+        -5px 5px 80px gold,
+        -5px -5px 80px gold;
+    border: none;
+}
+
+.filaments{
+    opacity: 0;
+}
+
+.bulb.off{
+    background: transpaarent;
+    box-shadow: none;
+    border: 2px solid black;
+}
+
+.filaments.off{
+    opacity: 1;
+}
+
+@keyframes bulb-swing{
+   0%{
+    transform: rotate(-10deg);
+   } 
+   50%{
+    transform: rotate(10deg);
+   }
+   100%{
+    transform: rotate(-10deg);
+   }
+}
+
+.floor{
+    position: absolute;
+    background: #000c19;
+    height: 200px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* .shadow{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: #877b1481;
+    border-radius: 50%;
+    box-shadow: 
+    20px 20px 20px 20px #877b1481,
+    -20px 20px 20px 20px #877b1481,
+    20px -20px 20px 20px #877b1481,
+    -20px -20px 20px 20px #877b1481;
+    top: calc(50% - 25px);
+    left: calc(50% - 25px);
+    animation: shadow-swing 3s infinite ease-in-out;
+} */
+
+.shadow.off{
+    background: #000c19;
+    box-shadow: none;
+}
+
+@keyframes shadow-swing {
+    0%{
+        transform: translateX(100px);
+    }
+    50%{
+        transform: translateX(-100px);
+    }
+    100%{
+        transform: translateX(100px);
+    }
+
+}
