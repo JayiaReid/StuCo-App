@@ -1,13 +1,4 @@
-body {
-    background-color: #001933;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    display: flex;
-    justify-content: center; /* horizontally center content */
-    align-items: center; /* vertically center content */
-    height: auto; /* full height of the viewport */
-    margin: 0; 
-    max-width: 100vw;
-}
+
 
 /* #orbitCircle{
     margin-top: 6%;

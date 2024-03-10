@@ -12,12 +12,13 @@
     width: auto;
     padding: 5vh;
     border-radius: 10px;
-    /* box-shadow: 0 0 30px #9a9a9a; */
-    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 20px #f8f8f85a;
+    background-color: rgb(0, 0, 0);
+    z-index: 3;
   }
 
   #display {
-    color: #000000;
+    color: #ffffff;
     font-size: 1.2em;
     text-align: right;
     /* padding-right: 30px; */
@@ -35,19 +36,19 @@
     margin: 2px;
     font-size: 20px;
     cursor: pointer;
-    background-color: #000000;
-    color: #54f7f8;
+    background-color: #ffffff;
+    color: #000000;
   }
 
   .operatorBtn.calcplanet, .btn-number.calcplanet {
     height: 30px;
     width: 30px;
     border: 0;
-    border-radius: 20%;
+    border-radius: 10%;
     margin: 2px;
     font-size: 20px;
     cursor: pointer;
-    background-color: #0F0F31;
+    background-color: #1e1e1e;
     color: white;
   }
   button.highlight.calcplanet{
@@ -63,12 +64,13 @@
     margin: 2px;
     font-size: 20px;
     cursor: pointer;
-    background-color: #000000;
-    color: gold;
+    background-color: #ffffff;
+    color: #FF5252;
   }
   button.highlight.calclamp{
-    background-color: gold;
+    background-color: rgb(255, 0, 0);
     color: black;
+    border-radius: 10%;
   }
   
 

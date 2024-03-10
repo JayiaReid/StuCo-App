@@ -27,16 +27,11 @@ function Head1(props) {
         <div id="body" className="scroller" data-speed="fast">
             <ul className="tag-list scroller__inner">
                 <li className='Pomo'><Link className="links" to="/orbit">Orbit: Pomodoro</Link></li>
-                {/* <li>SSG</li>
-                <li>webdev</li> */}
+                <li className='Home'><Link className="links" to="/login">Home: Home Page</Link></li>
                 <li className='plan'><Link className='links' to="/planet">Planet: Stopwatch</Link></li>
-                {/* <li>animation</li>
-                <li>UI/UX</li> */}
+                
                 <li className='lam'><Link className="links" to="/lamp">Lamp: Timer</Link></li>
-                {/* <li>SSG</li>
-                <li>webdev</li>
-                <li>animation</li>
-                <li>UI/UX</li> */}
+                
             </ul>
         </div>
     );

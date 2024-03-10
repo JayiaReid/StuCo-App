@@ -1,21 +1,11 @@
-body {
-    background-color: #001933;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    display: flex;
-    justify-content: center; /* horizontally center content */
-    align-items: center; /* vertically center content */
-    height: 100vh; /* full height of the viewport */
-    margin: 0; 
-    overflow:hidden;
-    min-height: 100vh;
-}
 #main{
     transform-origin: center;
+    
 }
 #planet{
     margin-top: 5%;
     display: inline-block;
-    position: relative;
+    position: fixed;
     height: 500px;
     width: 500px;
     margin-left: 25vh;
@@ -39,7 +29,7 @@ body {
     border-radius: 50%;
 }
 #satel{
-    background: #f0f0f0;
+    background: rgb(74, 74, 74);
     box-shadow: -2em 0 5em -1em white;
     overflow: hidden;
     transition: 250ms;
@@ -49,10 +39,10 @@ body {
 }
 
 #satel::after{
-    background: #0F0F31;
+    background: #1e1e1e;
     width: 2.5em;
     left: 2.5em;
-    box-shadow: 0 0 0.75em 0.95em #0F0F31;
+    box-shadow: 0 0 0.75em 0.95em  #1e1e1e;
     animation: shadow 5s infinite ease-in-out;
 }
 
@@ -75,7 +65,7 @@ body {
     }
     80%{
         left: 0;
-        box-shadow: 0 0 0.55em 0.75em #0F0F31;
+        box-shadow: 0 0 0.55em 0.75em #1e1e1e;
     }
     100%{
         width: 2.5em;

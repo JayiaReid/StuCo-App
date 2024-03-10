@@ -10,11 +10,8 @@ import addIcon from '../../../assets/add.png';
 export default function TodoList({inputBg}){
     const [tasks, setTasks]=useState([]);
     const [newTask, setNewTask]=useState("");
-    const todoListRef = useRef(null);
+    const nodeRef = React.useRef(null); //to avoid findDOM error
 
-    useEffect(() => {
-        todoListRef.current.focus();
-      }, []);
     
     function handleInput(e){
         setNewTask(e.target.value)
@@ -48,11 +45,22 @@ export default function TodoList({inputBg}){
         }
         
     }
+
+    //allowing resizability
+    const [width, setWidth] = useState(300);
+    const [height, setHeight] = useState(200); 
+
+    function onResize(event, { size }) {
+        const { width, height } = size;
+        setWidth(width);
+        setHeight(height);
+    }
     return(
         <Draggable
             axis="both"
-            handle="#todoList">    
-        <div id="todoList" ref={todoListRef}>
+            handle="#todoList"
+            nodeRef={nodeRef}>    
+        <div id="todoList" ref={nodeRef}>
             <div className="addToDo" 
                 style={{backgroundColor: inputBg}}>
                 {/* <h1>ToDo</h1> */}
@@ -63,7 +71,7 @@ export default function TodoList({inputBg}){
                 onChange={handleInput}/>
                 <img src={addIcon} className="addbtn" onClick={addTask}/>
             </div>
-            <ol id="todolist">
+            <ol id="todolist" style={{background: inputBg}}>
                 {tasks.map((task, index)=> 
                     <li key={index}>
                         <span>{task} </span>

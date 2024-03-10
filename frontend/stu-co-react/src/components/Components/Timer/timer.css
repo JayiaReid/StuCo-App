@@ -1,9 +1,9 @@
 #ptimer {
-    top: 20vh; /* Adjusted from margin-top to top */
+    top: 20vh; 
     text-align: center;
     position: fixed;
-    left: 50%; /* Set to center horizontally */
-    transform: translateX(-50%); /* Adjust horizontally to center */
+    left: 50%; 
+    transform: translateX(-50%); 
 }
 
 #ptimer h2 {
@@ -55,22 +55,22 @@
     display: flex;
     position: relative;
     flex-direction: column;
-    align-items: center; /* horizontally center items */
+    align-items: center; 
 }
 
 /* stopwatch timer */
 #timer {
-    top: 20vh; /* Adjusted from margin-top to top */
+    top: 20vh; 
     text-align: center;
     position: fixed;
-    left: 50%; /* Set to center horizontally */
-    transform: translateX(-50%); /* Adjust horizontally to center */
+    left: 50%; 
+    transform: translateX(-50%); 
 }
 
 #timer .display {
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     font-size: 3.5em;
-    text-shadow: 2px 2px 2px #ffffff;
+    text-shadow: 2px 2px 2px #000000; border-radius: 2%;
 }
 
 #timer {
@@ -81,21 +81,18 @@
     z-index: 1;
 }
 
-#timer .display {
-    color: rgb(255, 255, 255);
-    font-size: 3.5em;
-    text-shadow: 2px 2px 2px #ffffff;
-    /* background-color: white; */
-    border-radius: 2%;
-}
 
 /* timer timer */
 #ttimer {
-    top: 20vh; /* Adjusted from margin-top to top */
+    top: 0;
     text-align: center;
-    position: fixed;
-    left: 50%; /* Set to center horizontally */
-    transform: translateX(-50%); /* Adjust horizontally to center */
+    position: absolute;
+    left: 42%; 
+    /* transform: translateX(-50%);  */
+    background-color: rgb(255, 255, 255);
+    padding: 1em;
+    border-radius: 1%;
+    box-shadow: 0 5px 20px #f8f8f85a;
 }
 
 #ttimer .display {
@@ -113,7 +110,7 @@
 }
 
 #ttimer .display {
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     font-size: 3.5em;
     text-shadow: 2px 2px 2px #000000;
     /* background-color: white; */

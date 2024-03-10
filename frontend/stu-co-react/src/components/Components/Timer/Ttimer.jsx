@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
-import stopIcon from '../../../assets/stop.png';
-import startIcon from '../../../assets/play.png';
-import restartIcon from '../../../assets/restart (3).png';
+import stopIcon from '../../../assets/pause-button.png';
+import startIcon from '../../../assets/play-button.png';
+import restartIcon from '../../../assets/reload.png';
+import Draggable from 'react-draggable';
 
 function Ttimer({ onTimeChange }) {
     const [isRunning, setIsRunning] = useState(false);
@@ -9,6 +10,7 @@ function Ttimer({ onTimeChange }) {
     const [timerDuration, setTimerDuration] = useState(0); // User input for timer duration in seconds
     const intervalIdRef = useRef(null);
     const startTimeref = useRef(0);
+    const nodeRef = React.useRef(null); //to avoid findDOM error
 
     useEffect(() => {
         if (isRunning) {
@@ -84,14 +86,17 @@ function Ttimer({ onTimeChange }) {
     }
 
     return (
-        <div id="ttimer">
+        // <Draggable
+        //     axis='both'
+        //     handle='#ttimer'nodeRef={nodeRef}>
+        <div id="ttimer" ref={nodeRef}>
             <div className="display">{formatTime()}</div>
             <div className="controls">
                 <img onClick={start} src={startIcon} alt="Start"/>
                 <img onClick={stop} src={stopIcon} alt="Stop"/>
                 <img onClick={reset} src={restartIcon} alt="Restart"/>
             </div>
-        </div>
+         </div>
     );
 }
 

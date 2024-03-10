@@ -3,24 +3,25 @@
   margin-top: 0%;
   top: 0;
   right: 0;
-  height: 100vh;
-  width: 20%;
+  height: auto;
+  width: 8%;
   z-index: 999;
-  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.411);
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  display: none; /* Initially hide the menu */
+  display: flex; 
+   padding-top: 2em;
 }
 
-#head0.animated-open {
-  display: flex; /* Display the menu when isMenuOpen is true */
+/* #head0.animated-open {
+  display: flex; /* Display the menu when isMenuOpen is true 
   animation: smooth-in 1s ease-in-out;
 }
 
 #head0.animated-close {
   animation: smooth-out 2s ease-out; 
-}
+} */
 
 #head0 li {
   margin-top: 10%;
@@ -31,9 +32,14 @@
   text-decoration-line: none;
   font-size: 2em;
   cursor: pointer;
+  padding: 1em;
 }
 
-.menuIcon img,
+#head0 li img{
+  height: 50px;
+}
+
+/* .menuIcon img,
 .exitIcon img {
   height: 60px;
   position: fixed;
@@ -42,7 +48,7 @@
   top: 0;
   right: 0;
   cursor: pointer;
-}
+} */
 
 @keyframes smooth-in {
   from {
@@ -69,7 +75,7 @@
 /* head1 */
 .scroller {
     max-width: 900px;
-    
+    position: relative;
   }
   
   .scroller__inner {
@@ -147,19 +153,19 @@
   }
   .lam:hover{
     box-shadow: 
-        0px 0px 0px #f8fdfd,
-        0px 0px 3px rgb(254, 236, 130),
-        0px 0px 6px rgb(248, 222, 77),
-        0px 0px 12px gold;
+        0px 0px 0px #f6c4c4,
+        0px 0px 3px rgb(254, 130, 130),
+        0px 0px 6px rgb(248, 77, 77),
+        0px 0px 12px rgb(255, 0, 0);
         cursor: pointer;
   }
   .plan:hover{
     box-shadow: 
-        0px 0px 0px #f8fdfd,
-        0px 0px 3px rgb(255, 255, 255),
-        0px 0px 6px rgb(255, 255, 255),
-        0px 0px 12px rgb(255, 255, 255);
-        cursor: pointer;
+    0px 0px 0px #f8fdfd,
+    0px 0px 3px rgb(254, 236, 130),
+    0px 0px 6px rgb(248, 222, 77),
+    0px 0px 12px gold;
+    cursor: pointer;
   }
   .tag-list li {
     padding: 1rem;

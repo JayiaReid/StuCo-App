@@ -1,3 +1,5 @@
+
+
 .container{
     width: 75px;
     height: 275px;
@@ -5,7 +7,6 @@
     position: absolute;
     top: 0;
     left: calc(50% - (75px/2));
-    
 }
 
 .container.moveswing{
@@ -34,7 +35,7 @@
     position: absolute;
     width: 35px;
     height: 50px;
-    background: black;
+    background: rgb(0, 0, 0);
     bottom: 100%;
     left: calc(50% - (35px/2));
     border-top-left-radius: 10px;
@@ -47,13 +48,13 @@
     position: absolute;
     width: 10px;
     height: 250px;
-    background: black;
+    background: rgb(0, 0, 0);
     bottom: 100%;
     left: calc(50% - 5px);
     z-index: -1;
 }
 
-.filaments{
+/* .filaments{
     display: block;
     position: absolute;
     width: 2px;
@@ -62,6 +63,7 @@
     top: 2px;
     left: 28px;
     box-shadow: 17px 0 black;
+    z-index: 1;
 }
 
 .filaments::after{
@@ -73,10 +75,10 @@
     position: absolute;
     bottom: -2px;
     left: 4px;
-}
+} */
 
 .bulb{
-    background-color: #FFD700;
+    background-color: #ff0000;
     /* box-shadow: 
         5px 5px 80px gold, 
         5px -5px 80px gold,
@@ -86,10 +88,10 @@
 }
 .bulb.on{
     box-shadow: 
-        5px 5px 80px gold, 
-        5px -5px 80px gold,
-        -5px 5px 80px gold,
-        -5px -5px 80px gold;
+        10px 10px 70px rgba(255, 0, 0, 0.864), 
+        10px -10px 80px rgb(255, 89, 0),
+        -10px 10px 90px rgba(255, 0, 0, 0.432),
+        -10px -10px 100px rgba(255, 0, 0, 0.278);
     border: none;
 }
 
@@ -98,7 +100,7 @@
 }
 
 .bulb.off{
-    background: transpaarent;
+    background: rgba(255, 0, 0, 0.518);
     box-shadow: none;
     border: 2px solid black;
 }
@@ -119,15 +121,15 @@
    }
 }
 
-.floor{
+/* .floor{
     position: absolute;
-    background: #000c19;
+    background: rgb(255, 255, 255);
     height: 200px;
     width: 100%;
     bottom: 0;
     left: 0;
     z-index: -1;
-}
+} */
 
 /* .shadow{
     position: absolute;
@@ -161,4 +163,8 @@
         transform: translateX(100px);
     }
 
+}
+
+.addToDo input::placeholder{
+    color: black;
 }

@@ -4,6 +4,7 @@ import Draggable from 'react-draggable';
 
 function Calculator({ buttonClassName }) {
     const [result, setResult] = useState("");
+    const nodeRef = React.useRef(null); //to avoid findDOM error
 
     const handleButtonClick = (e) => {
         setResult(result.concat(e.target.name));
@@ -28,8 +29,9 @@ function Calculator({ buttonClassName }) {
     return (
         <Draggable
             axis="both"
-            handle=".calculator">
-            <div className="calculator">
+            handle=".calculator"
+            nodeRef={nodeRef}>
+            <div className="calculator" ref={nodeRef}>
                 <div className="display-screen">
                     <div id="display">{result}</div>
                 </div>

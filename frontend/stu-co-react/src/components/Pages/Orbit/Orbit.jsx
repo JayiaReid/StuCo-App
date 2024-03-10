@@ -6,15 +6,25 @@ import React, { useState, useEffect, useRef } from 'react';
 import PomodoroTimer from '../../Components/Timer/PomodoroTimer.jsx';
 import Calculator from '../../Components/Calculator/Calculator.jsx';
 import TodoList from '../../Components/ToDo/TodoList.jsx';
+import Draggable from 'react-draggable';
+import Converter from '../../Components/Converter/Converter.jsx';
 //pomodoro: prompt amount of pomodoro
 function Orbit(){
+    const [showTodoList, setShowTodoList] = useState(false);
+    const [showCalculator, setShowCalculator] = useState(false);
+    const [showConverter, setShowConverter]=useState(false);
     
     return(
         <div>
-            <Head0/>
+            <Head0 
+                toggleTodoList={() => setShowTodoList(!showTodoList)}
+                toggleCalculator={() => setShowCalculator(!showCalculator)}
+                toggleConverter={() => setShowConverter(!showConverter)}
+            />
             <Head1/>
-            <TodoList inputBg='#54f7f8'/>
-            <Calculator/>
+            {showTodoList && <TodoList inputBg='#54f7f8'/>}
+            {showCalculator && <Calculator/>}
+            {showConverter && <Converter bgcolor="#54f7f8"/>}
             <div id="StudyTimer">
                 <div id="orbitContainer">
                     <div id="orbitCircle">
