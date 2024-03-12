@@ -20,22 +20,22 @@ export default function Lamp() {
     }
 
     return (
-        <div id="lamp">
+        <div className='spaces' id="lamp">
             <Head0 
                 toggleTodoList={() => setShowTodoList(!showTodoList)}
                 toggleCalculator={() => setShowCalculator(!showCalculator)}
                 toggleConverter={() => setShowConverter(!showConverter)}
-            />
+            /><Head1 /><Ttimer/>
             <div className="container stopswing">
                 <div className="bulb" onClick={light} >
                     <div className="filaments" ></div>
                 </div>
+            
             </div>
             {showTodoList && <TodoList inputBg='red'/>}
             {showCalculator && <Calculator buttonClassName='calclamp'/>}
             {showConverter && <Converter bgcolor="red"/>}
-            <Head1 />
-            <Ttimer/>
+            
             {/* <div className="floor">
                 
             </div> */}

@@ -25,11 +25,11 @@ export default function Head0({ toggleTodoList, toggleCalculator, toggleConverte
     return (
         <nav>
             <ul id='head0' className={isMenuOpen ? 'animated-open' : 'animated'}>
-                <li><Link className='links' to='/login'><img title='spaces' src={HomeIcon}/></Link></li>
-                <li onClick={toggleCalculator}><Link className='links'><img title='spaces' src={calcIcon}/></Link></li>
-                <li onClick={toggleTodoList}><Link className='links'><img title='to-do list' src={toIcon}/></Link></li>
-                <li onClick={toggleConverter}><Link className='links'><img title='converter' src={convIcon}/></Link></li>
-                <li className='links' ><img title='spaces' src={menuIcon}/></li>
+                <li><Link className='links' to='/login'><img title='Login page' src={HomeIcon}/></Link></li>
+                <li onClick={toggleCalculator}><Link className='links'><img title='toggle calculator' src={calcIcon}/></Link></li>
+                <li onClick={toggleTodoList}><Link className='links'><img title='toggle to-do list' src={toIcon}/></Link></li>
+                <li onClick={toggleConverter}><Link className='links'><img title='toggle converter' src={convIcon}/></Link></li>
+                <li> <Link className='links' to='/instructions'><img title='See Guide' src={menuIcon}/></Link></li>
                 {/* {spaceDropdown && (
                     <div>
                         <ul id='ssdd'>

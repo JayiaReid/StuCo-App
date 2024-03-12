@@ -122,7 +122,7 @@
   
   #body {
     display: grid;
-    place-content: center;
+    /* place-content: center; */
     font-family: system-ui;
     font-size: 1.125rem;
     color: white;

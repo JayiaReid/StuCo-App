@@ -8,6 +8,7 @@ import Calculator from '../../Components/Calculator/Calculator.jsx';
 import TodoList from '../../Components/ToDo/TodoList.jsx';
 import Draggable from 'react-draggable';
 import Converter from '../../Components/Converter/Converter.jsx';
+
 //pomodoro: prompt amount of pomodoro
 function Orbit(){
     const [showTodoList, setShowTodoList] = useState(false);
@@ -15,7 +16,7 @@ function Orbit(){
     const [showConverter, setShowConverter]=useState(false);
     
     return(
-        <div>
+        <div className='spaces'>
             <Head0 
                 toggleTodoList={() => setShowTodoList(!showTodoList)}
                 toggleCalculator={() => setShowCalculator(!showCalculator)}

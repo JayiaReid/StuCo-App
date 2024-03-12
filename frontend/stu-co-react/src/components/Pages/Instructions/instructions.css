@@ -1,0 +1,69 @@
+#i_page{
+    color: white;
+    height: 180vh;
+    width: 99vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../../../assets/loginbg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-size: 1.5em;
+    /* font-family: ; */
+}
+
+
+#i_container{
+    width: 60vw;
+    height: 145vh;
+    position: absolute;
+    top: 15%;
+    left: 18%;
+    border-left: 2px #57BE92 solid;
+    border-top: 2px solid #ffbf00;
+    border-right: 2px solid #ff0000;
+    border-bottom: 2px solid #54f7f8;
+    padding: 1em;
+    /* border-radius: 5%; */
+    background: rgba(0, 0, 0, 0.226);
+    backdrop-filter: blur(3px);
+    animation: 1s fade-in ease-in-out;
+}
+
+@keyframes fade-in{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+#i_container h5{
+   font-size: larger;
+}
+
+#exit_i_btn{
+    color: white;
+    padding: 0.5em;
+    transition: 1.5s ease-in-out;
+    background-color: transparent;
+    border: transparent;
+    position: absolute;
+    left: 89%;
+    font-style: italic;
+     border-left: 2px #57BE92 solid;
+    border-top: 2px solid #ffbf00;
+    border-right: 2px solid #ff0000;
+    border-bottom: 2px solid #54f7f8;
+}
+
+#exit_i_btn:hover{
+    text-decoration: none;
+    cursor: pointer;
+   
+    transform: scale(1.1);
+}
+
+
+

@@ -12,7 +12,7 @@ function System(){
     const [showCalculator, setShowCalculator] = useState(false);
     const [showConverter, setShowConverter]=useState(false);
     return(
-        <div id="main">
+        <div className="spaces" id="main">
             <Head0 
                 toggleTodoList={() => setShowTodoList(!showTodoList)}
                 toggleCalculator={() => setShowCalculator(!showCalculator)}

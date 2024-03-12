@@ -20,6 +20,13 @@ function Ttimer({ onTimeChange }) {
                 setElapsedTime(prevElapsedTime => prevElapsedTime + elapsed);
                 startTimeref.current = now;
             }, 1000);
+            const bulb = document.querySelector('.bulb');
+            bulb.classList.add('on');
+            bulb.classList.remove('off');
+        }else{
+            const bulb = document.querySelector('.bulb');
+            bulb.classList.add('off');
+            bulb.classList.remove('on');
         }
 
         return () => {
