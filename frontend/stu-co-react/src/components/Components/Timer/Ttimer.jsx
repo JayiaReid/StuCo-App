@@ -4,7 +4,7 @@ import startIcon from '../../../assets/play-button.png';
 import restartIcon from '../../../assets/reload.png';
 import Draggable from 'react-draggable';
 
-function Ttimer({ onTimeChange }) {
+function Ttimer(props) {
     const [isRunning, setIsRunning] = useState(false);
     const [elapsedTime, setElapsedTime] = useState(0);
     const [timerDuration, setTimerDuration] = useState(0); // User input for timer duration in seconds

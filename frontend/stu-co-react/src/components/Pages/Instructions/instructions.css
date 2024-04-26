@@ -1,24 +1,28 @@
 #i_page{
     color: white;
-    height: 180vh;
+    height: 130vh;
+    /* max-height: 190vh; */
     width: 99vw;
     display: flex;
     align-items: center;
     justify-content: center;
     background-image: url('../../../assets/loginbg.jpg');
-    background-size: cover;
+    background-attachment: fixed;
+    background-size:cover;
     background-repeat: no-repeat;
-    font-size: 1.5em;
+    background-position:center;
+    font-size:1.15em;
     /* font-family: ; */
 }
 
 
 #i_container{
-    width: 60vw;
-    height: 145vh;
+    width: 80%;
+    /* height: 100%; */
+    max-height:max-content;
     position: absolute;
-    top: 15%;
-    left: 18%;
+    top: 30px;
+    /* left: 50px; */
     border-left: 2px #57BE92 solid;
     border-top: 2px solid #ffbf00;
     border-right: 2px solid #ff0000;
@@ -28,6 +32,7 @@
     background: rgba(0, 0, 0, 0.226);
     backdrop-filter: blur(3px);
     animation: 1s fade-in ease-in-out;
+    /* padding-bottom: 10%; */
 }
 
 @keyframes fade-in{
@@ -43,26 +48,40 @@
    font-size: larger;
 }
 
+#i_exit{
+    display: flex;
+    justify-content: center;
+}
 #exit_i_btn{
     color: white;
     padding: 0.5em;
-    transition: 1.5s ease-in-out;
+    transition: 1s ease-in-out;
     background-color: transparent;
     border: transparent;
-    position: absolute;
-    left: 89%;
+    /* left: 89%; */
+    width: 90%;
     font-style: italic;
-     border-left: 2px #57BE92 solid;
-    border-top: 2px solid #ffbf00;
-    border-right: 2px solid #ff0000;
-    border-bottom: 2px solid #54f7f8;
+     border-left: 2px #57be9183 solid;
+    border-top: 2px solid #ffbf0067;
+    border-right: 2px solid #ff000071;
+    border-bottom: 2px solid #54f8f872;
 }
 
 #exit_i_btn:hover{
     text-decoration: none;
     cursor: pointer;
-   
+    border-left: 2px #57BE92 solid;
+    border-top: 2px solid #ffbf00;
+    border-right: 2px solid #ff0000;
+    border-bottom: 2px solid #54f7f8;
     transform: scale(1.1);
+}
+
+@media only screen and (max-width: 790px) {
+    #i_page {
+        font-size: 1em; 
+        height: 130vh;
+    }
 }
 
 

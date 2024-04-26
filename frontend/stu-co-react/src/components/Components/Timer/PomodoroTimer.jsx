@@ -6,7 +6,7 @@ import startIcon from '../../../assets/pstart.png';
 import restartIcon from '../../../assets/refresh.png';
 
 //game in between break
-function PomodoroTimer({ onTimeChange }) {
+function PomodoroTimer(props) {
     const [isRunning, setIsRunning] = useState(false);
     const [elapsedTime, setElapsedTime] = useState(0);
     const [pomodoro, setPomodoro] = useState(0);
@@ -14,6 +14,7 @@ function PomodoroTimer({ onTimeChange }) {
     const intervalIdRef = useRef(null);
     const startTimeref = useRef(0);
     const pomodoroDuration = 1500; // 25 minutes in seconds
+    const [percent, setPercent]=useState(0);
 
     useEffect(() => {
         if (isRunning) {
@@ -31,43 +32,63 @@ function PomodoroTimer({ onTimeChange }) {
     }, [isRunning]);
 
     useEffect(() => {
+        const l_content = document.querySelector('#l_content');
+        const circle=document.querySelector('#loader');
+
         if (elapsedTime >= pomodoroDuration * 1000) {
             setElapsedTime(0);
             setCheck(false);
             setPomodoro(prevPomodoro => prevPomodoro + 1);
             setIsRunning(false);
             alert("Pomodoro is finished! Take a walk and come back!");
+        }else{
+            if(isRunning){
+                circle.style.animation = 'spin 1s infinite linear'
+                l_content.style.animation = 'spin 1s infinite linear reverse'
+                setPercent(100-((elapsedTime / (pomodoroDuration * 1000)) * 100))
+                circle.style.background = `conic-gradient(from 0deg at 50% 50%, 
+                    #26fbfb 0%,
+                    #a9ffff ${percent}%,
+                    #000000 ${percent}%)`
+            }else{
+                circle.style.animation = 'spin 100000s infinite linear'
+                l_content.style.animation = 'spin 100000s infinite linear reverse'
+                setPercent(0)
+                circle.style.background = `conic-gradient(from 0deg at 50% 50%, 
+                    #26fbfb 0%,
+                    #a9ffff ${percent}%,
+                    #000000 ${percent}%)`
+            }
+
+            
+        
+            // setPercent(100-((elapsedTime / (pomodoroDuration * 1000)) * 100))
+
+            circle.style.background = `conic-gradient(from 0deg at 50% 50%, 
+            #26fbfb 0%,
+            #a9ffff ${percent}%,
+            #000000 ${percent}%)`
+            
+        
         }
-    }, [elapsedTime]);
+    }, [elapsedTime, isRunning]);
 
     function start() {
         setIsRunning(true);
         startTimeref.current = Date.now();
-        const orbitElement = document.querySelector('.ripple');
-        orbitElement.classList.remove('stopripple');
-        // const orbiter = document.querySelector('.orbiter');
-        // orbiter.classList.remove('stop');
-        // orbiter.classList.add('move');
     }
 
     function stop() {
         setIsRunning(false);
-        const orbitElement = document.querySelector('.ripple');
-        orbitElement.classList.add('stopripple');
-        // const orbiter = document.querySelector('.orbiter');
-        // orbiter.classList.remove('move');
-        // orbiter.classList.add('stop');
         
     }
 
     function reset() {
         setElapsedTime(0);
         setIsRunning(false);
-        const orbitElement = document.querySelector('#orbitCircle');
-        orbitElement.classList.remove('orbitCircleMove');
-        orbitElement.classList.add('orbitCircleStop');
         setPomodoro(0);
         setCheck(false);
+        setPercent(100)
     }
 
     function formatTime() {
@@ -86,7 +107,7 @@ function PomodoroTimer({ onTimeChange }) {
 
     return (
         <div id="ptimer" onMouseOver={handlePomodoro}>
-            <h2 className="animate__animated animate__bounce">Pomodoros: {pomodoro}</h2>
+            <h2 className="animate__animated animate__bounce">{props.name}'s Pomodoros: {pomodoro}</h2>
             <div className="display">{formatTime()}</div>
             <div className="controls">
                 <img onClick={start} src={startIcon} alt="Start"/>
