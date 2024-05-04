@@ -24,7 +24,7 @@ const secretKey = generateRandomString(32);
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.json())
 app.use(cors({
-    origin: ["https://stu-co-study.vercel.app/"],
+    origin: ["https://stu-co-study-server.vercel.app/"],
     methods: ["POST", "GET"],
     credentials: true
 }));
