@@ -9,7 +9,7 @@ export default function Instructions(){
 
     axios.defaults.withCredentials = true;
     useEffect(()=>{
-        axios.get('https://stu-co-study-server.vercel.app/').then(
+        axios.get('http://localhost:5170/').then(
             (response)=>{
                 if(response.data.valid){
                     console.log(response.data)

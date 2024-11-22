@@ -283,3 +283,4 @@ app.post('/api/add-note', (req, res)=>{
     }
 })
 
+module.exports = app
